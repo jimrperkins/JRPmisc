@@ -19,5 +19,7 @@ aaSeqToKmers <- function(seqs, k=5, allPoss=FALSE, rev=FALSE) {
         return(countV)
         })
     kmerM <- do.call("rbind", kmerV)
+    colnames(kmerM) <- bag
+    rownames(kmerM) <- names(seqs)
     return(kmerM)
 }
